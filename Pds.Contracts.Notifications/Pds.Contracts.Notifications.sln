@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.Contracts.Notifications.Func", "Pds.Contracts.Notifications.Func\Pds.Contracts.Notifications.Func.csproj", "{9AE7553F-0FA3-469A-9FBD-3F61C2B637B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.Contracts.Notifications.Func.Tests", "Pds.Contracts.Notifications.Func.Tests\Pds.Contracts.Notifications.Func.Tests.csproj", "{BF6F0155-7872-43D8-9DDA-26AFF3BF58A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.Contracts.Notifications.Services", "Pds.Contracts.Notifications.Services\Pds.Contracts.Notifications.Services.csproj", "{80C02A8E-BF9F-40B9-BDF1-0F11AAD0AD1E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pds.Contracts.Notifications.Services.Tests", "Pds.Contracts.Notifications.Services.Tests\Pds.Contracts.Notifications.Services.Tests.csproj", "{796AE838-8E96-4E57-94FA-4919432FF87F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{891482CF-337F-4611-8B2D-1986B3CD9959}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AE7553F-0FA3-469A-9FBD-3F61C2B637B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE7553F-0FA3-469A-9FBD-3F61C2B637B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE7553F-0FA3-469A-9FBD-3F61C2B637B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE7553F-0FA3-469A-9FBD-3F61C2B637B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6F0155-7872-43D8-9DDA-26AFF3BF58A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6F0155-7872-43D8-9DDA-26AFF3BF58A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6F0155-7872-43D8-9DDA-26AFF3BF58A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6F0155-7872-43D8-9DDA-26AFF3BF58A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80C02A8E-BF9F-40B9-BDF1-0F11AAD0AD1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80C02A8E-BF9F-40B9-BDF1-0F11AAD0AD1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80C02A8E-BF9F-40B9-BDF1-0F11AAD0AD1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80C02A8E-BF9F-40B9-BDF1-0F11AAD0AD1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796AE838-8E96-4E57-94FA-4919432FF87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796AE838-8E96-4E57-94FA-4919432FF87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796AE838-8E96-4E57-94FA-4919432FF87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796AE838-8E96-4E57-94FA-4919432FF87F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D52B617A-18A1-46BA-9175-E08FD6A43712}
+	EndGlobalSection
+EndGlobal

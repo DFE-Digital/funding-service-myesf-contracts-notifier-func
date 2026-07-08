@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Pds.Contracts.Notifications.Func": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "containerRunArguments": "--init",
+      "httpPort": 31817,
+      "useSSL": false
+    }
+  }
+}
