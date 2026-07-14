@@ -1,7 +1,6 @@
+﻿The MIT License (MIT)
 
-MIT License
-
-Copyright (c) 2021 Education and Skills Funding Agency Team
+Copyright (c) 2022‒2024 Crown Copyright (DFE Digital)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
