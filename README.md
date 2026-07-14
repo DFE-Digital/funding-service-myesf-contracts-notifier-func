@@ -1,8 +1,10 @@
 # Manage your education and skills funding - Contracts notifications function
 
-## Introduction
+The Manage Your Education and Skills Funding (MYESF) Contracts Notifications Function is used by the MYESF web application to notify interested applications and consumers e.g. learning providers of:
 
-Contracts notification function is a serverless azure function that handles significant contract changes, funding claim changes, and subcontractor declaration notifications, and notifies interested applications and consumers e.g. learning providers. This function is triggered by an azure service bus message.
+- significant contract changes
+- funding claim changes
+- subcontractor declaration notifications
 
 ## Provider
 
@@ -10,15 +12,11 @@ Contracts notification function is a serverless azure function that handles sign
 
 ## About this project
 
-This project is an ASP.NET Core 8 function app utilising Azure App Service for deployment.
+This project is an ASP.NET Core 8 serverless function app utilising Azure App Service for deployment.
 
-The function app runs on an Azure App service on Azure.
+The function app runs on an Azure App service on Azure and is triggered by an azure service bus message.
 
 **Note:** The project is currently being updated to be containerised via Docker where the deployment method and target will change, this document will be updated when these changes have been finalised.
-
-# Local Configuration Guide
-
-In order to run the application locally a valid `appsettings.json` file will need to be created in the `Pds.Contracts.Notifications.Func` project. Below, and included in the repo, there is `appsettings.example.json` which can be used as a base and populated with the required values, which can be retrieved from the Azure Portal.
 
 ### Getting Started
 
@@ -74,15 +72,11 @@ Audit API can be found at <https://github.com/SkillsFundingAgency/pds-shared-aud
 
 (Subcontractor Declaration API to be added.)
 
-### Local Config Files
+# Local Configuration Guide
 
-Once you have cloned the public repo you need the following configuration files listed below.
+In order to run the application locally a valid `local.settings.json` file will need to be created in the `Pds.Contracts.Notifications.Func` project. Below, and included in the repo, there is `appsettings.example.json` which can be used as a base and populated with the required values, which can be retrieved from the Azure Portal.
 
-| Location | config file |
-|-------|-------|
-| Pds.Contracts.Notifications.Func | local.settings.json |
-
-The following is a sample configuration file
+## Application Settings (`appsettings.json`)
 
 ```json
 {
@@ -304,14 +298,15 @@ The following configurations need to be replaced with your values.
 |CdsUserExceptionEmail|replace_CdsUserExceptionEmail|
 |ServiceNowEmailAddress|replace_ServiceNowEmailAddress|
 
+
 ## Build and Test
 
 This API is built using
 
 * Microsoft Visual Studio 2022
-* .Net Core 6.0
+* .Net Core 8.0
 
-To build and test locally, you can either use visual studio 2022 or VSCode or simply use dotnet CLI `dotnet build` and `dotnet test` more information in dotnet CLI can be found at <https://docs.microsoft.com/en-us/dotnet/core/tools/>.
+To build and test locally, you can either use Visual Studio 2022 or VSCode or simply use dotnet CLI `dotnet build` and `dotnet test` more information in dotnet CLI can be found at <https://docs.microsoft.com/en-us/dotnet/core/tools/>.
 
 ## Contribute
 
