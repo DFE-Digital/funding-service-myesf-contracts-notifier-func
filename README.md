@@ -225,7 +225,7 @@ In order to run the application locally a valid `local.settings.json` file will 
 
 ## Build and Test
 
-To build and test locally, you can either use Visual Studio 2022 or VSCode or simply use dotnet CLI `dotnet build` and `dotnet test` more information in dotnet CLI can be found at <https://docs.microsoft.com/en-us/dotnet/core/tools/>.
+To build and test locally, you can either use Visual Studio, Visual Studio Code or simply use dotnet CLI `dotnet build` and `dotnet test` more information in dotnet CLI can be found at <https://docs.microsoft.com/en-us/dotnet/core/tools/>.
 
 ## Contribute
 
