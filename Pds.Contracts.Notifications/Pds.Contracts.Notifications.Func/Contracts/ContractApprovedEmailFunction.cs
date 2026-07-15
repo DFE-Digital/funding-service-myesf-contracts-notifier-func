@@ -28,7 +28,7 @@ namespace Pds.Contracts.Notifications.Func.Contracts
         /// <param name="contractApprovedEmailMessage">Contract approved email message from queue.</param>
         /// <returns><see cref="Task"/> representing the asynchronous operation.</returns>
         [Function(nameof(ContractApprovedEmailFunction))]
-        public async Task Run([ServiceBusTrigger(Constants.ContractApprovedEmailQueue, Connection = "AzureMessagingServiceBusOptions:ConnectionString")]ContractApprovedEmailMessage contractApprovedEmailMessage)
+        public async Task Run([ServiceBusTrigger(Constants.ContractApprovedEmailQueue, Connection = "AzureMessagingServiceBusOptions:ConnectionString")] ContractApprovedEmailMessage contractApprovedEmailMessage)
         {
             try
             {

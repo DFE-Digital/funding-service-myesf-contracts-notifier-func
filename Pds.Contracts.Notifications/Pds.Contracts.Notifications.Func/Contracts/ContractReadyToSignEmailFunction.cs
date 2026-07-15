@@ -28,7 +28,7 @@ namespace Pds.Contracts.Notifications.Func.Contracts
         /// <param name="contractReadyToSignEmailMessage">Contract ready to sign email message from queue.</param>
         /// <returns><see cref="Task"/> representing the asynchronous operation.</returns>
         [Function(nameof(ContractReadyToSignEmailFunction))]
-        public async Task Run([ServiceBusTrigger(Constants.ContractReadyToSignEmailQueue, Connection = "AzureMessagingServiceBusOptions:ConnectionString")]ContractReadyToSignEmailMessage contractReadyToSignEmailMessage)
+        public async Task Run([ServiceBusTrigger(Constants.ContractReadyToSignEmailQueue, Connection = "AzureMessagingServiceBusOptions:ConnectionString")] ContractReadyToSignEmailMessage contractReadyToSignEmailMessage)
         {
             try
             {

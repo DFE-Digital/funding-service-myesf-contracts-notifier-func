@@ -307,7 +307,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
                 ApiBaseAddress = TestBaseAddress
             };
 
-        private static NotificationMessage GetNotificationMessageMock(string documentTitle, string documentType,  string messageType)
+        private static NotificationMessage GetNotificationMessageMock(string documentTitle, string documentType, string messageType)
         {
             return new NotificationMessage()
             {

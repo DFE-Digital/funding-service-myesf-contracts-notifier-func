@@ -76,7 +76,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             SetupServicesMock(null, serviceBusMessage.ContractId, false, true);
 
             // Act
-            Func<Task> actual = async () => { await _contractApprovedEmailService.Process(serviceBusMessage);  };
+            Func<Task> actual = async () => { await _contractApprovedEmailService.Process(serviceBusMessage); };
 
             // Assert
             await actual.Should().ThrowAsync<ApiGeneralException>();

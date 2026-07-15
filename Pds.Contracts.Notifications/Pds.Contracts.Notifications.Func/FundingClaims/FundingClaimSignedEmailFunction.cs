@@ -28,7 +28,7 @@ namespace Pds.Contracts.Notifications.Func.FundingClaims
         /// <param name="fundingClaimSignedEmailMessage">Funding claim signed email message from queue.</param>
         /// <returns><see cref="Task"/> representing the asynchronous operation.</returns>
         [Function(nameof(FundingClaimSignedEmailFunction))]
-        public async Task Run([ServiceBusTrigger(Constants.FundingClaimSignedEmailQueue, Connection = "AzureMessagingServiceBusOptions:ConnectionString")]FundingClaimSignedEmailMessage fundingClaimSignedEmailMessage)
+        public async Task Run([ServiceBusTrigger(Constants.FundingClaimSignedEmailQueue, Connection = "AzureMessagingServiceBusOptions:ConnectionString")] FundingClaimSignedEmailMessage fundingClaimSignedEmailMessage)
         {
             try
             {
