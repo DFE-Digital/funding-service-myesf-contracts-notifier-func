@@ -231,5 +231,5 @@ To build and test locally, you can either use Visual Studio, Visual Studio Code 
 
 To contribute,
 
-* If you are part of the team then create a branch for changes and then submit your changes for review by creating a pull request.
-* If you are external to the organisation then fork this repository and make necessary changes and then submit your changes for review by creating a pull request.
+- If you are part of the team then create a branch for changes and then submit your changes for review by creating a pull request.
+- If you are external to the organisation then fork this repository and make necessary changes and then submit your changes for review by creating a pull request.
