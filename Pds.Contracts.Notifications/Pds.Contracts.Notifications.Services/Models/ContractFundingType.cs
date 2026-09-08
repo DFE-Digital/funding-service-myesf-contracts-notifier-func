@@ -240,6 +240,7 @@ namespace Pds.Contracts.Notifications.Services.Models
 
         /// <summary>
         /// Taking teaching further.
+        /// Used for 2024-25 Cohort Year 1 and 2025-26 Cohort Year 1.
         /// </summary>
         [Display(Name = "Taking teaching further", Description = "Taking teaching further")]
         TakingTeachingFurther = 38,
@@ -253,6 +254,7 @@ namespace Pds.Contracts.Notifications.Services.Models
 
         /// <summary>
         /// Taking teaching further year 2.
+        /// Used for 2024-25 Cohort Year 2 and 2025-26 Cohort Year 2.
         /// </summary>
         [Display(Name = "Taking teaching further", Description = "Taking teaching further")]
         TakingTeachingFurtherYear2 = 40,
@@ -274,6 +276,13 @@ namespace Pds.Contracts.Notifications.Services.Models
         /// Shares AEB2023 funding type from FCS with ESFA Adult Education Budget (procured from Aug 2023).
         /// </summary>
         [Display(Name = "DWP Adult Skills Fund", Description = "DWP Adult Skills Fund")]
-        DWPAdultSkillsFund = 43
+        DWPAdultSkillsFund = 43,
+
+        /// <summary>
+        /// Taking teaching further year 2026-2027 cohort - Round 9.
+        /// Used for 2026-27 Cohort, Year 1.
+        /// </summary>
+        [Display(Name = "Taking teaching further", Description = "Taking teaching further")]
+        TakingTeachingFurtherRound9 = 44,
     }
 }
