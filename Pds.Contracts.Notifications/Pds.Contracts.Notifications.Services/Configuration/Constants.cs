@@ -70,24 +70,9 @@ namespace Pds.Contracts.Notifications.Services.Configuration
         public const string FeedReadExceptionEmailQueue = "feedreadexception";
 
         /// <summary>
-        /// Funding Claim Signed Email Queue.
-        /// </summary>
-        public const string FundingClaimSignedEmailQueue = "fundingclaimsignedemail";
-
-        /// <summary>
-        /// Funding Claim Ready To Sign Email Queue.
-        /// </summary>
-        public const string FundingClaimReadyToSignEmailQueue = "fundingclaimreadytosignemail";
-
-        /// <summary>
         /// Funding Claim Ready To View Email Queue.
         /// </summary>
         public const string FundingClaimReadyToViewEmailQueue = "fundingclaimreadytoviewemail";
-
-        /// <summary>
-        /// Funding Claim Withdrawn Email Queue.
-        /// </summary>
-        public const string FundingClaimWithdrawnEmailQueue = "fundingclaimwithdrawnemail";
 
         /// <summary>
         /// Reconciliation Ready To Be Viewed Email Queue.
@@ -197,34 +182,9 @@ namespace Pds.Contracts.Notifications.Services.Configuration
         public const string MessageType_ProcessContractFromFeedException = "ProcessContractFromFeedException";
 
         /// <summary>
-        /// Funding Claim Signed Email Message Type.
-        /// </summary>
-        public const string MessageType_FundingClaimSignedEmail = "FundingClaimSigned";
-
-        /// <summary>
-        /// Funding Claim Ready To Sign For Signing Users Email Message Type.
-        /// </summary>
-        public const string MessageType_FundingClaimReadyToSignEmail = "FundingClaimReadyToSign";
-
-        /// <summary>
-        /// Funding Claim Ready To Sign For View Only Users Email Message Type.
-        /// </summary>
-        public const string MessageType_FundingClaimReadyToSignViewOnlyEmail = "FundingClaimReadyToSignViewOnly";
-
-        /// <summary>
         /// Funding Claim Ready To View Submitted Date Available Email Message Type.
         /// </summary>
         public const string MessageType_FundingClaimReadyToViewDateAvailableEmail = "FundingClaimReadyToViewDateAvailable";
-
-        /// <summary>
-        /// Funding Claim Withdrawn Not Signed Email Message Type.
-        /// </summary>
-        public const string MessageType_FundingClaimWithdrawnNotSignedEmail = "FundingClaimWithdrawnNotSigned";
-
-        /// <summary>
-        /// Funding Claim Withdrawn When Previous Version Signed Email Message Type.
-        /// </summary>
-        public const string MessageType_FundingClaimWithdrawnPreviousVersionSignedEmail = "FundingClaimWithdrawnPreviousVersionSigned";
 
         /// <summary>
         /// Reconciliation Ready To Be Viewed Email Message Type.

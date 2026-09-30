@@ -97,10 +97,7 @@ namespace Pds.Contracts.Notifications.Services.DependencyInjection
             services.AddScoped<IContractsQueryEmailService, ContractsQueryEmailService>();
             services.AddScoped<IContractContentToBeSignedService, ContractContentToBeSignedService>();
 
-            services.AddScoped<IFundingClaimSignedEmailService, FundingClaimSignedEmailService>();
-            services.AddScoped<IFundingClaimReadyToSignEmailService, FundingClaimReadyToSignEmailService>();
             services.AddScoped<IFundingClaimReadyToViewEmailService, FundingClaimReadyToViewEmailService>();
-            services.AddScoped<IFundingClaimWithdrawnEmailService, FundingClaimWithdrawnEmailService>();
             services.AddScoped<IReconciliationReadyToBeViewedEmailService, ReconciliationReadyToBeViewedEmailService>();
 
             services.AddScoped<ISubcontractorDeclarationEmailService, SubcontractorDeclarationEmailService>();
