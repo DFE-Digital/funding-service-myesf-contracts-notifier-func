@@ -127,7 +127,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockLogger.Verify(logger => logger.LogError(expectedError), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithValidContractAndFailedDSIApiCall_ThrowsException(ContractFundingType contractFundingType, string documentType)
@@ -169,7 +169,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockHttp.VerifyNoOutstandingRequest();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithValidContractAndInvalidRoles_DoesNotSendContractReadyToSignEmail(ContractFundingType contractFundingType, string documentType)
@@ -215,7 +215,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == $"{nameof(ContractReadyToSignEmailMessage)} processed and no users found with roles [SignContractsAndAgreements] for organisation [{mockContract.Ukprn}]")), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithValidContractAndSignContractsAndAgreementsUserRole_SuccessfullySendsContractReadyToSignEmail(ContractFundingType contractFundingType, string documentType)
@@ -260,7 +260,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithBothValidUserRoles_SuccessfullySendsContractReadyToSignEmail(ContractFundingType contractFundingType, string documentType)
@@ -306,7 +306,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithValidContractAndViewContractsAndAgreementsUserRole_SuccessfullySendsContractReadyToSign_ViewOnly_Email(ContractFundingType contractFundingType, string documentType)
@@ -356,7 +356,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithValidContractAndTwoUsersWithSignContractAndAgreementsandViewContractsAndAgreementsUserRoles_SuccessfullySendsContractReadyToSignEmailAndContractReadyToSign_ViewOnly_Email(ContractFundingType contractFundingType, string documentType)
@@ -406,7 +406,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage2)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithValidContractAndSignContractsAndAgreementsRoleAndNotificationServiceReturnsError_ThrowsException(ContractFundingType contractFundingType, string documentType)
@@ -451,7 +451,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockNotificationEmailQueueService.Verify(service => service.SendAsync(ItIs.EquivalentTo(expectedMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Levy, "agreement")]
         [DataRow(ContractFundingType.Aebp, "contract")]
         public async Task Process_WithValidContractAndViewContractsAndAgreementsRoleAndNotificationServiceReturnsError_ThrowsException(ContractFundingType contractFundingType, string documentType)

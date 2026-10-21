@@ -130,7 +130,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.FundingClaims
             _mockDfESignInPublicApi.Verify(api => api.GetUserContactsForOrganisation(It.IsAny<int>(), It.IsAny<string[]>()), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ReconciliationType.FINAL)]
         [DataRow(ReconciliationType.YEAREND)]
         public async Task Process_WithValidReconciliationAndInvalidRoles_DoesNotSendReconciliationReadyToBeViewedEmail(ReconciliationType reconciliationType)
@@ -167,7 +167,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.FundingClaims
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == $"{nameof(ReconciliationReadyToBeViewedEmailMessage)} processed and no users found with roles [ViewFundingClaimsAndReconciliationStatements, SignFundingClaims] for organisation [{mockFundingClaim.Ukprn}].")), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ReconciliationType.FINAL)]
         [DataRow(ReconciliationType.YEAREND)]
         public async Task Process_WithValidReconciliationAndRequiredUserRoles_SuccessfullySendsReconciliationReadyToBeViewedEmail(ReconciliationType reconciliationType)
@@ -202,7 +202,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.FundingClaims
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ReconciliationType.FINAL)]
         [DataRow(ReconciliationType.YEAREND)]
         public async Task Process_WithValidReconciliationAndRequiredUserRolesWhenNotificationServiceReturnsError_ThrowsException(ReconciliationType reconciliationType)

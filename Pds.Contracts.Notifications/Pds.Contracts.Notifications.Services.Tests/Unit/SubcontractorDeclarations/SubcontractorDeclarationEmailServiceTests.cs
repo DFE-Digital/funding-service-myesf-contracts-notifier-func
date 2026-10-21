@@ -134,7 +134,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.SubcontractorDeclarati
             _mockDfESignInPublicApi.Verify(api => api.GetUserContactsForOrganisation(It.IsAny<int>(), It.IsAny<string[]>()), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(SubcontractorDeclarationSubmissionType.Nil, Constants.MessageType_SubcontractorReturnSubmissionNilReturnEmail)]
         [DataRow(SubcontractorDeclarationSubmissionType.Full, Constants.MessageType_SubcontractorReturnSubmissionFullReturnEmail)]
         public async Task Process_WithValidSubcontractorDeclarationAndInvalidRoles_DoesNotSendSubcontractorDeclarationEmail(SubcontractorDeclarationSubmissionType subcontractorDeclarationSubmissionType, string messageType)
@@ -170,7 +170,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.SubcontractorDeclarati
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == $"{nameof(SubcontractorDeclarationEmailMessage)} processed and no users found with roles [ViewPreviousSubcontractorDeclarations, SubmitSubcontractorDeclarations] for organisation [{mockFullSubcontractorDeclaration.Ukprn}]")), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(SubcontractorDeclarationSubmissionType.Nil, Constants.MessageType_SubcontractorReturnSubmissionNilReturnEmail)]
         [DataRow(SubcontractorDeclarationSubmissionType.Full, Constants.MessageType_SubcontractorReturnSubmissionFullReturnEmail)]
         public async Task Process_WithValidSubcontractorDeclarationAndRequiredUserRoles_SuccessfullySendsSubcontractorDeclarationEmail(SubcontractorDeclarationSubmissionType subcontractorDeclarationSubmissionType, string messageType)
@@ -208,7 +208,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.SubcontractorDeclarati
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(SubcontractorDeclarationSubmissionType.Nil, Constants.MessageType_SubcontractorReturnSubmissionNilReturnEmail)]
         [DataRow(SubcontractorDeclarationSubmissionType.Full, Constants.MessageType_SubcontractorReturnSubmissionFullReturnEmail)]
         public async Task Process_WithValidSubcontractorDeclarationAndRequiredUserRolesWhenNotificationServiceReturnsError_ThrowsException(SubcontractorDeclarationSubmissionType subcontractorDeclarationSubmissionType, string messageType)

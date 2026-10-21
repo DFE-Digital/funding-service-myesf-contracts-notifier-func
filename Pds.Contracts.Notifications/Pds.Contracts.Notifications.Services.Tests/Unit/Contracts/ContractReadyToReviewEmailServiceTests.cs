@@ -211,7 +211,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == $"{nameof(ContractReadyToReviewEmailMessage)} processed and no users found with roles [ViewContractsAndAgreements, SignContractsAndAgreements] for organisation [{mockContract.Ukprn}]")), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Aebp, "contract")]
         [DataRow(ContractFundingType.Levy, "agreement")]
         public async Task Process_WithValidContractOrAgreementAndRequiredUserRoles_SuccessfullySendsContractOrAgreementReadyToReviewEmail(ContractFundingType contractFundingType, string documentType)
@@ -258,7 +258,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Aebp, "contract")]
         [DataRow(ContractFundingType.Levy, "agreement")]
         public async Task Process_WithValidContractOrAgreementRequiredUserRolesAndNotificationServiceReturnsError_ThrowsException(ContractFundingType contractFundingType, string documentType)
@@ -293,7 +293,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             SetupDfESignInPublicApiMock(new[] { UserRole.SignContractsAndAgreements.ToString(), UserRole.ViewContractsAndAgreements.ToString() });
 
             // Act
-            await Assert.ThrowsExceptionAsync<Exception>(async () => await _contractReadyToReviewEmailService.Process(serviceBusMessage));
+            await Assert.ThrowsAsync<Exception>(async () => await _contractReadyToReviewEmailService.Process(serviceBusMessage));
 
             // Assert
             _mockHttp.VerifyNoOutstandingRequest();
