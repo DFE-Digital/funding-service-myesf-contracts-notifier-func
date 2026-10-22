@@ -54,7 +54,7 @@ namespace Pds.Contracts.Notifications.Func.Tests.Unit.Contracts
             mockService.Verify();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("", 1, 12345678, null)]
         [DataRow("contract1", 0, 12345678)]
         [DataRow("contract1", 1, 0)]

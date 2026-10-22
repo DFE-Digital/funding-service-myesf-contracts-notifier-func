@@ -121,7 +121,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
                 "Unable to find the email address from configuration->ServiceNowEmailAddress.");
 
             // Assert
-            var result = await Assert.ThrowsExceptionAsync<Exception>(async () => await _contractsQueryEmailService.Process(serviceBusMessage));
+            var result = await Assert.ThrowsAsync<Exception>(async () => await _contractsQueryEmailService.Process(serviceBusMessage));
             Assert.AreEqual(expectedError, result.Message);
 
             _mockHttp.VerifyNoOutstandingRequest();

@@ -12,7 +12,7 @@ The Manage Your Education and Skills Funding (MYESF) Contracts Notifications Fun
 
 ## About this project
 
-This project is an ASP.NET Core 8 serverless function app utilising Azure App Service for deployment.
+This project is an ASP.NET Core 10 serverless function app utilising Azure App Service for deployment.
 
 The function app runs on an Azure App service on Azure and is triggered by an azure service bus message.
 

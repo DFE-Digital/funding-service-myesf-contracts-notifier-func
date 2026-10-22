@@ -55,10 +55,10 @@ namespace Pds.Contracts.Notifications.Func.Tests.Unit.FeedRead
             mockService.Verify();
         }
 
-        [DataTestMethod]
-        [DataRow(3, "def6ea78-ee68-43d3-939a-5ec04eb822d6", "url")]
-        [DataRow(0, null, "url")]
-        [DataRow(1, "def6ea78-ee68-43d3-939a-5ec04eb822d6", "", true)]
+        [TestMethod]
+        [DataRow((ExceptionType)3, "def6ea78-ee68-43d3-939a-5ec04eb822d6", "url")]
+        [DataRow(ExceptionType.BookmarkNotMatched, null, "url")]
+        [DataRow(ExceptionType.EmptyPageOnFeed, "def6ea78-ee68-43d3-939a-5ec04eb822d6", "", true)]
         public async Task Run_WhenValidationFailure_ThrowsArgumentException(ExceptionType type, string bookmark, string url, bool isArgumentNullException = false)
         {
             // Arrange

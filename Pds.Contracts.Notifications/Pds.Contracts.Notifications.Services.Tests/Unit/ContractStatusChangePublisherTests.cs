@@ -108,7 +108,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit
             VerifyAllMocks(expectedMessage, expectedAuditMessage, ConfigurationConstants.Constants.ContractReadyToSignEmailQueue);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractStatus.WithdrawnByAgency)]
         [DataRow(ContractStatus.WithdrawnByProvider)]
         public async Task NotifyContractWithdrawnTestAsync(ContractStatus withdrawnStatus)

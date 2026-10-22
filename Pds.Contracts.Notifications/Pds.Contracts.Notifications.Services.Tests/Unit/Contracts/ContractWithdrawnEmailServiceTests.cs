@@ -87,7 +87,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             await actual.Should().ThrowAsync<ApiGeneralException>();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractStatus.WithdrawnByProvider)]
         [DataRow(ContractStatus.WithdrawnByAgency)]
         public async Task Process_WithValidContractOrAgreementAndFailedDSIApiCall_ThrowsException(ContractStatus contractStatus)
@@ -128,7 +128,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockHttp.VerifyNoOutstandingRequest();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractStatus.WithdrawnByProvider, Constants.MessageType_ContractWithdrawnByProviderEmail)]
         [DataRow(ContractStatus.WithdrawnByAgency, Constants.MessageType_ContractWithdrawnByESFAEmail)]
         public async Task Process_WithValidContractOrAgreementAndInvalidRoles_DoesNotSendContractOrAgreementWithdrawnEmail(ContractStatus contractStatus, string messageType)
@@ -175,7 +175,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == $"{nameof(ContractWithdrawnEmailMessage)} processed and no users found with roles [ViewContractsAndAgreements, SignContractsAndAgreements] for organisation [{mockContract.Ukprn}].")), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Aebp, ContractStatus.WithdrawnByProvider, Constants.MessageType_ContractWithdrawnByProviderEmail, "contract")]
         [DataRow(ContractFundingType.Levy, ContractStatus.WithdrawnByAgency, Constants.MessageType_ContractWithdrawnByESFAEmail, "agreement")]
         public async Task Process_WithValidContractOrAgreementAndRequiredUserRoles_SuccessfullySendsContractOrAgreementWithdrawnEmail(ContractFundingType contractFundingType, ContractStatus contractStatus, string messageType, string documentType)
@@ -222,7 +222,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Aebp, ContractStatus.WithdrawnByProvider, Constants.MessageType_ContractWithdrawnByProviderEmail, "contract")]
         [DataRow(ContractFundingType.Levy, ContractStatus.WithdrawnByAgency, Constants.MessageType_ContractWithdrawnByESFAEmail, "agreement")]
         public async Task Process_WithValidContractOrAgreementRequiredUserRolesAndNotificationServiceReturnsError_ThrowsException(ContractFundingType contractFundingType, ContractStatus contractStatus, string messageType, string documentType)

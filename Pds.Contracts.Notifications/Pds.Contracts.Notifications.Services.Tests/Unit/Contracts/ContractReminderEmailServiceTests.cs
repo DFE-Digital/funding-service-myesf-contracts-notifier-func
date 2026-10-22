@@ -177,7 +177,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == $"{nameof(ContractReminderEmailMessage)} processed and no users found with roles [ViewContractsAndAgreements, SignContractsAndAgreements] for organisation [{mockContract.Ukprn}].")), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Aebp, "contract")]
         [DataRow(ContractFundingType.Levy, "agreement")]
         public async Task Process_WithValidContractAndRequiredUserRoles_SuccessfullySendsContractReminderEmail(ContractFundingType fundingType, string documentType)
@@ -215,7 +215,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.Contracts
             _mockAuditService.Verify(audit => audit.AuditAsync(It.Is<Audit.Api.Client.Models.Audit>(x => x.Message == expectedAuditMessage)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ContractFundingType.Aebp, "contract")]
         [DataRow(ContractFundingType.Levy, "agreement")]
         public async Task Process_WithValidContractRequiredUserRolesAndNotificationServiceReturnsError_ThrowsException(ContractFundingType fundingType, string documentType)

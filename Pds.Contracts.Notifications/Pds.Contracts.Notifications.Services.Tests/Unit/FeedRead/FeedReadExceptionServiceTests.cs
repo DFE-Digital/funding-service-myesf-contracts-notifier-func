@@ -39,7 +39,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.FeedReed
             _feedReadExceptionService = new FeedReadExceptionService(_mockNotificationEmailQueueService.Object, _configurationMock, _mocklogger.Object);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ExceptionType.EmptyPageOnFeed, Constants.MessageType_FeedReadExceptionEmptyPageEmail)]
         [DataRow(ExceptionType.BookmarkNotMatched, Constants.MessageType_FeedReadExceptionBookmarkNotMatchedEmail)]
         public async Task Process_WhenMessageReceived_SuccessfullySendsFeedReadExceptionEmptyPageEmail(ExceptionType exceptionType, string messageType)
@@ -83,7 +83,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.FeedReed
             result.Which.Message.Should().Contain($"No email template found for expection type [{serviceBusMessage.Type.ToString()}]");
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ExceptionType.EmptyPageOnFeed)]
         [DataRow(ExceptionType.BookmarkNotMatched)]
         public async Task Process_WhenUnableToReadEmailFromConfig_ThrowsException(ExceptionType exceptionType)
@@ -110,7 +110,7 @@ namespace Pds.Contracts.Notifications.Services.Tests.Unit.FeedReed
             _mocklogger.Verify(logger => logger.LogError(expectedErrorMessage), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ExceptionType.EmptyPageOnFeed, Constants.MessageType_FeedReadExceptionEmptyPageEmail)]
         [DataRow(ExceptionType.BookmarkNotMatched, Constants.MessageType_FeedReadExceptionBookmarkNotMatchedEmail)]
         public async Task Process_WhenNotificationEmailQueueServiceReturnsError_ThrowsException(ExceptionType exceptionType, string messageType)

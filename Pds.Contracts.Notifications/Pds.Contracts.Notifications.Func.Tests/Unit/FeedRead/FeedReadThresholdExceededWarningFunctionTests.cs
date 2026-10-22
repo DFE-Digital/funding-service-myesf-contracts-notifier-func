@@ -54,7 +54,7 @@ namespace Pds.Contracts.Notifications.Func.Tests.Unit.FeedRead
             mockService.Verify();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(false, "def6ea78-ee68-43d3-939a-5ec04eb822d6", "url")]
         [DataRow(true, null, "url")]
         [DataRow(true, "def6ea78-ee68-43d3-939a-5ec04eb822d6", "", true)]
